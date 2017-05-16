@@ -1,6 +1,7 @@
 # sell
+  高仿饿了么App商家详情页
+> 本项目基于Vue2.0 + Vue cli + Vue Router2 + Vue Resource + Webpack + es6　+　stylus + better Scroll开发，新手教程，大家可以参考参考代码，看看Vue1.0　与Vue2.0　的不同.
 
-> sell app
 
 ## Build Setup
 
