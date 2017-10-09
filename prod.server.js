@@ -7,9 +7,9 @@ var app = express();
 
 var router = express.Router();
 
-router.get('/', function (req, res, next) {
-  req.url = '/index.html';
-  next();
+router.get('/', function(req, res, next) {
+    req.url = '/index.html';
+    next();
 });
 
 app.use(router);
@@ -20,37 +20,37 @@ var goods = appData.goods;
 var ratings = appData.ratings;
 
 var apiRoutes = express.Router();
-apiRoutes.get('/seller',function(req,res){
-  res.json({
-    errNo: 0,
-    data: seller
-  });
+apiRoutes.get('/seller', function(req, res) {
+    res.json({
+        errNo: 0,
+        data: seller
+    });
 });
 
-apiRoutes.get('/goods',function(req,res){
-  res.json({
-    errNo: 0,
-    data: goods
-  });
+apiRoutes.get('/goods', function(req, res) {
+    res.json({
+        errNo: 0,
+        data: goods
+    });
 });
 
-apiRoutes.get('/ratings',function(req,res){
-  res.json({
-    errNo: 0,
-    data: ratings
-  });
+apiRoutes.get('/ratings', function(req, res) {
+    res.json({
+        errNo: 0,
+        data: ratings
+    });
 });
 
-app.use('/api',apiRoutes);
+app.use('/api', apiRoutes);
 
 app.use(express.static('./dist'));
 
-module.exports = app.listen(port, function (err) {
-  if (err) {
-    console.log(err);
-    return
-  }
-  console.log('Listening at http://localhost:' + port + '\n')
+module.exports = app.listen(port, function(err) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log('Listening at http://localhost:' + port + '\n');
 });
 /* var server = app.listen(port)
 
@@ -59,5 +59,4 @@ module.exports = {
   close: () => {
     server.close()
   }
-}*/
-
+} */

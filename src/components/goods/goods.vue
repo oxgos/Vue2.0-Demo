@@ -5,7 +5,7 @@
       <!--右侧菜单栏-->
       <div class="menu-wrapper" ref="menuWrapper">
         <ul>
-          <li v-for="(item,index) in goods" class="menu-item" :class="{ 'current':currentIndex === index }" @click="selectMenu(index,$event)">
+          <li v-for="(item,index) in goods" :key="index" class="menu-item" :class="{ 'current':currentIndex === index }" @click="selectMenu(index,$event)">
 					<span class="text border-1px">
 						<span v-show="item.type>0" :class="classMap[item.type]" class="icon"></span>{{ item.name }}
 					</span>
@@ -15,10 +15,10 @@
       <!--左侧商品列表栏-->
       <div class="foods-wrapper" ref="foodsWrapper">
         <ul>
-          <li v-for="item in goods" class="food-list food-list-hook">
+          <li v-for="(item, index) in goods" :key="index" class="food-list food-list-hook">
             <h1 class="title">{{ item.name }}</h1>
             <ul>
-              <li v-for="food in item.foods" class="food-item border-1px" @click="selectedFood(food,$event)">
+              <li v-for="(food, index) in item.foods" :key="index" class="food-item border-1px" @click="selectedFood(food,$event)">
                 <div class="icon">
                   <img :src="food.icon" width="57" height="57">
                 </div>
